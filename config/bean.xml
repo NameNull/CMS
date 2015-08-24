@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context" 
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:ehcache="http://ehcache-spring-annotations.googlecode.com/svn/schema/ehcache-spring"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://www.springframework.org/schema/beans   
+		http://www.springframework.org/schema/beans/spring-beans.xsd   
+		http://www.springframework.org/schema/context   
+		http://www.springframework.org/schema/context/spring-context-4.1.xsd   
+		http://www.springframework.org/schema/tx   
+		http://www.springframework.org/schema/tx/spring-tx-4.1.xsd   
+		http://ehcache-spring-annotations.googlecode.com/svn/schema/ehcache-spring     
+		http://ehcache-spring-annotations.googlecode.com/svn/schema/ehcache-spring/ehcache-spring-1.1.xsd"
+		default-lazy-init="true"
+>
+	<description>spring容器</description>
+	<!-- 扫描包 -->
+	<context:component-scan base-package="cn.yjava.dao,cn.yjava.web,cn.yjava.service" />
+	<!-- 数据库连接池 -->
+	<context:property-placeholder location="classpath:db.properties" order="1" file-encoding="utf-8"/>
+	<bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource" destroy-method="close">
+		<property name="driverClass" value="${jdbc.driver}"></property>
+		<property name="user" value="${jdbc.username}"></property>
+		<property name="password" value="${jdbc.password}"></property>
+		<property name="jdbcUrl" value="${jdbc.url}"></property>
+		<!-- 设置连接池初始值 -->
+		<property name="initialPoolSize" value="${jdbc.initPoolSize}"></property>
+		<property name="maxPoolSize" value="${jdbc.maxPoolSize}"></property>
+		<property name="minPoolSize" value="${jdbc.minPoolSize}"></property>
+		<property name="acquireIncrement" value="${jdbc.increase}"></property>
+	</bean>
+	<!-- 配置hibernate -->
+	<bean id="sessionFactory"  class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
+		<!-- 获取数据源 -->
+		<property name="dataSource" ref="dataSource"></property>
+		<!-- 获取目录 -->
+		<property name="packagesToScan" value="cn.yjava.model"></property>
+		<property name="namingStrategy">
+			<bean class="org.hibernate.cfg.ImprovedNamingStrategy"></bean>
+		</property>
+		<!-- 参数设置 -->
+		<property name="hibernateProperties">
+			<props>
+				<!-- 数据库断言 -->
+				<prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
+				<!-- 显示sql -->
+				<prop key="hibernate.show_sql">true</prop>
+				<!-- 格式化sql -->
+				<prop key="hibernate.format_sql">true</prop>
+				<!-- 自动映射表 -->
+				<prop key="hibernate.hbm2ddl.auto">update</prop>
+				<!-- 当前sessioncontext -->
+				<prop key="hibernate.current_session_context_class">org.springframework.orm.hibernate4.SpringSessionContext</prop>
+			</props>
+		</property>
+	</bean>
+	<!-- 事物管理 -->
+	<bean id="transactionManager" class="org.springframework.orm.hibernate4.HibernateTransactionManager">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	<!-- 加载注解的事物包 -->
+	<tx:annotation-driven transaction-manager="transactionManager"/>
+</beans> 
