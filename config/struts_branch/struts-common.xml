@@ -5,7 +5,7 @@
 <struts>
 	<package name="admin" extends="default" namespace="/admin">
 		<!-- 登录页面 -->
-		<action name="login" method="login" class="adminAction"></action>
+		<action name="*" method="{1}" class="adminAction"></action>
 		<!-- 首页 -->
 		<action name="index" method="index" class="indexAction">
 			<result name="success">/WEB-INF/pages/admin/banner.jsp</result>

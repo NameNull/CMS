@@ -7,13 +7,13 @@
 <title>登录页面</title>
 <%@include file="/commons/public.jsp" %>
 <style type="text/css">
-body{ background:#2b9c6b/* url(images/login_bg.jpg) no-repeat*/; color:#2f3437; font-size:12px;}
+body{ background:url(images/bg.png) no-repeat center top fixed/* url(images/login_bg.jpg) no-repeat*/; color:#2f3437; font-size:12px;}
 #login_div{ width:100%; height:100%;}
 #login_div .login_bt{ width:100%; height:30%; position:relative;}
 #login_div .login_logo{font-size:40px;color:#fff;line-height:65px;text-align:center; width:450px; height:65px; position:absolute; top:-85px; left:50%; margin-left:-225px; }
-#login_div .login_nr{ width:100%; height:300px; background:rgba(47,52,55,0.8); filter:progid:DXImageTransform.Microsoft.gradient(startcolorstr=#7F2f3437,endcolorstr=#7F2f3437);}
+#login_div .login_nr{ width:100%; height:300px; filter:progid:DXImageTransform.Microsoft.gradient(startcolorstr=#7F2f3437,endcolorstr=#7F2f3437);}
 #login_div .login_zi{ width:316px; margin:100px auto;}
-#login_div .tishi{ width:100%; height:55px; line-height:55px; color:#ffffff;}
+#login_div .tishi{ width:100%; height:55px; line-height:55px; color:#fff;}
 #login_div .tishi span{ display:block; width:16px; height:16px; margin-top:20px; float:left;}
 #login_div .tishi p{ float:left; padding-left:5px;}
 #login_div .icon_close{cursor:pointer; background:url(images/icon_close.png) no-repeat;}
@@ -26,7 +26,7 @@ body{ background:#2b9c6b/* url(images/login_bg.jpg) no-repeat*/; color:#2f3437; 
 #login_div .yz_change,#login_div .yz_pic{ width:38%; line-height:44px; text-align:center; float:right;}
 #login_div .yz_change a{ color:#ffffff;}
 #login_div .yz_change span{ color:#28b779;}
-#login_div .submit_btn{ width:100%; height:44px; text-align:center; color:#ffffff; font-size:18px; border:0px; background:#28b779;-moz-border-radius:6px;-webkit-border-radius:6px;border-radius: 6px; cursor:pointer;}
+#login_div .submit_btn{ width:100%; height:44px; text-align:center; color:#ffffff; font-size:18px; border:0px; background:#00929d;-moz-border-radius:6px;-webkit-border-radius:6px;border-radius: 6px; cursor:pointer;}
 .copyright{text-align:center;width:100%;color:#fff;position:absolute;bottom:10px;}
 </style>
 </head>
@@ -42,11 +42,11 @@ body{ background:#2b9c6b/* url(images/login_bg.jpg) no-repeat*/; color:#2f3437; 
           	    	<div class="tishi" id="tishi" style="display:none;"><span class="icon_close"></span><p></p></div>
           	   </div>
                <div class="box">
-                    <input name="" type="text" id="account" placeholder="请输入账号"  maxlength="50" class="user_box" />
+                    <input name="" type="text" id="account" placeholder="请输入账号" value="yujie" maxlength="50" class="user_box" />
                     <div class="user_pic"></div>
                </div>
                <div class="box">
-                    <input name="" type="password" id="password" placeholder="请输入密码"  maxlength="50" class="user_box" />
+                    <input name="" type="password" id="password" placeholder="请输入密码" value="yujie" maxlength="50" class="user_box" />
                     <div class="password_pic"></div>
                </div>
                <div class="yanzheng">
