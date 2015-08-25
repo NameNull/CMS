@@ -11,6 +11,6 @@
               <li><a href="admin/company/list">公司介绍管理</a></li>
               <li><a href="admin/links/list">友情链接管理</a></li>
           </ul>
-          <div class="admin_exit"><p class="info">俞 杰</p><a href="admin/exit" class="iconfont">&#xe611;</a></div>
+          <div class="admin_exit"><p class="info">${sessionScope.adminSession.username }</p><a href="admin/login/exit" class="iconfont">&#xe61b;</a></div>
      </div>
 </div>
