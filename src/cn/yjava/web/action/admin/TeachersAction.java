@@ -20,7 +20,7 @@ public class TeachersAction extends BaseAction{
 	/**
 	 * 
 	 * @description 教师栏页
-	 * @方法名 index
+	 * @方法名 list
 	 * @return String
 	 * @exception
 	 */

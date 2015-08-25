@@ -1,5 +1,7 @@
 package cn.yjava.web.action.admin;
 
+import java.util.List;
+
 import org.apache.struts2.ServletActionContext;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
@@ -8,6 +10,7 @@ import org.springframework.stereotype.Controller;
 import cn.yjava.core.action.BaseAction;
 import cn.yjava.model.Admin;
 import cn.yjava.service.IAdminService;
+import cn.yjava.service.IPermissionService;
 
 /**
  * 
@@ -20,9 +23,11 @@ import cn.yjava.service.IAdminService;
  */
 @Controller
 @Scope("prototype")
-public class AdminAction extends BaseAction{
+public class LoginAction extends BaseAction{
 	private String account;//用户名
 	private String password;//密码
+	@Autowired
+	private IPermissionService permissionService;//权限
 	@Autowired
 	private IAdminService adminService;
 	/**
@@ -32,7 +37,7 @@ public class AdminAction extends BaseAction{
 	 * @return String
 	 * @exception
 	 */
-	public String login(){
+	public String execute(){
 		return LOGIN;
 	}
 	/**
@@ -45,6 +50,9 @@ public class AdminAction extends BaseAction{
 	public String loginValidate(){
 		Admin admin=adminService.find(account, password);
 		if(admin!=null){
+			Integer adminId=admin.getId();
+			List<Object[]> permissions=permissionService.find(adminId);
+			ServletActionContext.getRequest().getSession().setAttribute("adminPermission",permissions);
 			ServletActionContext.getRequest().getSession().setAttribute("adminSession", admin);
 			result=SUCCESS;
 		}else{

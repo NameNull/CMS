@@ -16,7 +16,9 @@
 				error:opts.error,
 				success:function(data){
 					if(data.result=="loginout"){
-						location.href=basePath+"login";
+						location.href=basePath+"admin/login";
+					}else if(data.result=="noPermission"){
+						location.href=basePath+"admin/noPermission";
 					}else{
 						if(opts.callback)opts.callback(data);
 					}

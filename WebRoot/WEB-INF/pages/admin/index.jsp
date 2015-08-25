@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>banner管理</title>
+<title>后台首页</title>
 <%@include file="/commons/public.jsp" %>
 </head>
 

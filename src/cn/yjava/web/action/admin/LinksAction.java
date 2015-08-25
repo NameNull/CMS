@@ -20,7 +20,7 @@ public class LinksAction extends BaseAction{
 	/**
 	 * 
 	 * @description 友情链接栏页
-	 * @方法名 index
+	 * @方法名 list
 	 * @return String
 	 * @exception
 	 */

@@ -6,10 +6,7 @@
 	<package name="default" extends="json-default" namespace="/default">
 		<interceptors>
 			<interceptor name="loginInterceptor" class="cn.yjava.core.interceptor.LoginInterceptor"></interceptor>
-			<interceptor-stack name="loginStack">
-				<interceptor-ref name="loginInterceptor"></interceptor-ref>
-				<interceptor-ref name="defaultStack"></interceptor-ref>
-			</interceptor-stack>
+			<interceptor name="permissionInterceptor" class="cn.yjava.core.interceptor.PermissionInterceptor"></interceptor>
 		</interceptors>
 		<global-results>
 			<result name="login">/WEB-INF/pages/admin/login.jsp</result>

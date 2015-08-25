@@ -24,8 +24,8 @@ public class LoginInterceptor extends AbstractInterceptor{
 	private static final long serialVersionUID = 1L;
 
 	public String intercept(ActionInvocation invacation) throws Exception {
-		Admin admin=(Admin) ServletActionContext.getRequest().getSession().getAttribute("adminSession");
 		HttpServletRequest request=ServletActionContext.getRequest();
+		Admin admin=(Admin) request.getSession().getAttribute("adminSession");
 		String requestType=request.getHeader("X-Requested-With");
 		if(admin==null){
 			if(StringUtils.isNotEmpty(requestType)&&requestType.equals("XMLHttpRequest")){
@@ -34,8 +34,9 @@ public class LoginInterceptor extends AbstractInterceptor{
 				return "ajaxSuccess";
 			}
 			return "exit";
+		}else{
+			return invacation.invoke();
 		}
-		return invacation.invoke();
 	}
 
 }

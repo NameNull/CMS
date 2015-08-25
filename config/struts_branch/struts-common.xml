@@ -5,15 +5,23 @@
 <struts>
 	<package name="admin" extends="default" namespace="/admin">
 		<!-- 登录页面 -->
-		<action name="*" method="{1}" class="adminAction"></action>
-		<!-- 首页 -->
-		<action name="index" method="index" class="indexAction">
-			<result name="success">/WEB-INF/pages/admin/index.jsp</result>
-			<interceptor-ref name="loginStack"></interceptor-ref>
+		<action name="login/*" method="{1}" class="loginAction"></action>
+		<!-- 首页跳转 -->
+		<action name="index" class="indexAction">
+			<result>/WEB-INF/pages/admin/index.jsp</result>
+			<interceptor-ref name="loginInterceptor"></interceptor-ref>
+			<interceptor-ref name="defaultStack"></interceptor-ref>
 		</action>
-		<!-- 各个栏目跳转 -->
+		<!--各个栏目跳转 -->
 		<action name="*/*" method="{2}" class="{1}Action">
 			<result>/WEB-INF/pages/admin/{1}.jsp</result>
+			<interceptor-ref name="loginInterceptor"></interceptor-ref>
+			<interceptor-ref name="permissionInterceptor"></interceptor-ref>
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+		</action>
+		<!-- 没有权限页面跳转 -->
+		<action name="noPermission" class="noPermissionAction">
+			<result>/WEB-INF/pages/admin/noPermission.jsp</result>
 		</action>
 	</package>
 </struts>

@@ -4,7 +4,7 @@
     "http://struts.apache.org/dtds/struts-2.3.dtd">
 <struts>
 	<package namespace="/ajax" name="ajax" extends="default">
-		<action name="loginValidate" method="loginValidate" class="adminAction">
+		<action name="loginValidate" method="loginValidate" class="loginAction">
 			<result type="json" name="ajaxSuccess">
 				<param name="excludeNullProperties">true</param>
 				<param name="ignoreHierarchy">false</param>

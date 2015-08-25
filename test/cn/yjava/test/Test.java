@@ -5,7 +5,7 @@ import java.sql.SQLException;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import cn.yjava.web.action.admin.AdminAction;
+import cn.yjava.web.action.admin.LoginAction;
 
 /**
  * 
@@ -22,7 +22,7 @@ public class Test {
 		contentDao.save(null);*/
 		@SuppressWarnings("resource")
 		ApplicationContext context=new ClassPathXmlApplicationContext("bean.xml");
-		AdminAction adminAction=context.getBean("adminAction",AdminAction.class);
+		LoginAction adminAction=context.getBean("adminAction",LoginAction.class);
 		adminAction.loginValidate();
 	}
 }

@@ -20,7 +20,7 @@ public class CompanyAction extends BaseAction{
 	/**
 	 * 
 	 * @description 公司栏页
-	 * @方法名 index
+	 * @方法名 list
 	 * @return String
 	 * @exception
 	 */

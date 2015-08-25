@@ -42,11 +42,11 @@ body{ background:url(images/bg.png) no-repeat center top fixed/* url(images/logi
           	    	<div class="tishi" id="tishi" style="display:none;"><span class="icon_close"></span><p></p></div>
           	   </div>
                <div class="box">
-                    <input name="" type="text" id="account" placeholder="请输入账号" value="yujie" maxlength="50" class="user_box" />
+                    <input name="" type="text" id="account" placeholder="请输入账号" value="ace" maxlength="50" class="user_box" />
                     <div class="user_pic"></div>
                </div>
                <div class="box">
-                    <input name="" type="password" id="password" placeholder="请输入密码" value="yujie" maxlength="50" class="user_box" />
+                    <input name="" type="password" id="password" placeholder="请输入密码" value="ace" maxlength="50" class="user_box" />
                     <div class="password_pic"></div>
                </div>
                <div class="yanzheng">

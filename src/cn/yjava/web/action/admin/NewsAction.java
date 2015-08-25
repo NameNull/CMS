@@ -20,7 +20,7 @@ public class NewsAction extends BaseAction{
 	/**
 	 * 
 	 * @description 新闻栏页
-	 * @方法名 index
+	 * @方法名 list
 	 * @return String
 	 * @exception
 	 */

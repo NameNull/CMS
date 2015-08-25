@@ -8,7 +8,7 @@ import cn.yjava.core.action.BaseAction;
 /**
  * 
  * @title IndexAction 
- * @description  后台首页处理类
+ * @description  没有权限处理类
  * @author 俞杰
  * @time 2015年8月24日-上午9:26:26
  * @version 1.0.0
@@ -16,15 +16,15 @@ import cn.yjava.core.action.BaseAction;
  */
 @Controller
 @Scope("prototype")
-public class BannersAction extends BaseAction{
+public class NoPermissionAction extends BaseAction{
 	/**
 	 * 
-	 * @description 广告栏页
-	 * @方法名 list
+	 * @description 跳转没有权限页面
+	 * @方法名 execute
 	 * @return String
 	 * @exception
 	 */
-	public String list(){
+	public String execute(){
 		return SUCCESS;
 	}
 }

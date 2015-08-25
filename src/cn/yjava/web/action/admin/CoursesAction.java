@@ -20,7 +20,7 @@ public class CoursesAction extends BaseAction{
 	/**
 	 * 
 	 * @description 课程栏页
-	 * @方法名 index
+	 * @方法名 list
 	 * @return String
 	 * @exception
 	 */

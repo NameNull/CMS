@@ -20,11 +20,11 @@ public class IndexAction extends BaseAction{
 	/**
 	 * 
 	 * @description 首页
-	 * @方法名 index
+	 * @方法名 execute
 	 * @return String
 	 * @exception
 	 */
-	public String index(){
+	public String execute(){
 		return SUCCESS;
 	}
 }
