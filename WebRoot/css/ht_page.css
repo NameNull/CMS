@@ -7,13 +7,13 @@ body{ background:url(../images/bg.png) no-repeat center top fixed; padding-botto
 .c_red{ color:#f27429;}
 
 .container{ width:1000px; margin:50px auto 30px; background:#ffffff; border-radius:4px; -webkit-border-radius:4px; -moz-border-radius:3px; box-shadow:1px 1px 10px rgba(0, 0, 0, 0.5); -webkit-box-shadow:1px 1px 10px rgba(0, 0, 0, 0.5); -moz-box-shadow:1px 1px 10px rgba(0, 0, 0, 0.5); padding-bottom:30px;}
-
-.dh{ width:100%; height:58px; background:#45b3af; border-top-left-radius:4px; border-top-right-radius:4px; -webkit-border-top-left-radius:4px; -webkit-border-top-right-radius:4px; -moz-border-top-left-radius:4px; -moz-border-top-right-radius:4px;}
+.container .ht_con .text{text-indent:28px;word-break:break-all;word-wrap:break-word;}
+.dh{min-width:1000px; width:100%; height:58px; background:#45b3af; border-top-left-radius:4px; border-top-right-radius:4px; -webkit-border-top-left-radius:4px; -webkit-border-top-right-radius:4px; -moz-border-top-left-radius:4px; -moz-border-top-right-radius:4px;}
 .dh_left{ padding-left:28px; padding-right:28px; height:39px; padding-top:19px; text-align:center; background:#00929d; border-right:1px solid #008996; border-top-left-radius:4px; -webkit-border-top-left-radius:4px; -moz-border-top-left-radius:4px;}
 .dh_list{ height:58px;}
 .dh_list li{ padding-left:16px; padding-right:16px; height:58px; line-height:58px; border-left:1px solid #45b3af; border-right:1px solid #45b3af; float:left;}
 .dh_list li:hover,.dh_list li.select{ background:#5ac9c5; border-left:1px solid #34a5a1; border-right:1px solid #34a5a1; transition:all 0.3s ease; -webkit-transition:all 0.3s ease; -moz-transition:all 0.3s ease;}
-.dh_list li a{ color:#aafffc;}
+.dh_list li a{ color:#aafffc;width: 100%;height: 100%;display: block;}
 .dh_list li a:hover,.dh_list li:hover a,.dh_list li.select a{ color:#ffffff;}
 
 .ht_con{ width:960px; margin:0 auto; padding-top:20px; padding-bottom:20px;}
@@ -63,14 +63,6 @@ body{ background:url(../images/bg.png) no-repeat center top fixed; padding-botto
 .page a:hover,.page a.onselect{ background:#00929d; border:1px solid #00929d; color:#ffffff;}
 
 
-@media screen and (max-width:1010px){
-.container{ width:100%;}
-.ht_con{ width:96%;}
-.textarea_nr{ width:82%;}
-.textarea_nr1{ width:82%;}
-.kc_list li:nth-child(3n){ padding-right:42px;}
-.ban_list li:nth-child(2n){ float:left;}
-}
 
 .admin_exit{padding-left:15px;border-radius:5px 0 0 5px;height:40px;line-height:40px;background:#45b3af;color:#fff;position:fixed;top:60px;right:-30px;-webkit-transition:right .5s;-o-transition:right .5s;-moz-transition:right .5s;-ms-transition:right .5s;transition:right .5s;}
 .admin_exit a{padding-right:10px;font-size:18px;display:block;float:left;color:#fff;}

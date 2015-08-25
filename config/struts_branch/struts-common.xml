@@ -8,8 +8,12 @@
 		<action name="*" method="{1}" class="adminAction"></action>
 		<!-- 首页 -->
 		<action name="index" method="index" class="indexAction">
-			<result name="success">/WEB-INF/pages/admin/banner.jsp</result>
+			<result name="success">/WEB-INF/pages/admin/index.jsp</result>
 			<interceptor-ref name="loginStack"></interceptor-ref>
+		</action>
+		<!-- 各个栏目跳转 -->
+		<action name="*/*" method="{2}" class="{1}Action">
+			<result>/WEB-INF/pages/admin/{1}.jsp</result>
 		</action>
 	</package>
 </struts>

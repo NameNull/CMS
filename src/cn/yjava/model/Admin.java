@@ -1,13 +1,18 @@
 package cn.yjava.model;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
 /**
@@ -28,6 +33,7 @@ public class Admin implements Serializable{
 	private String account;//账号
 	private String password;//密码
 	private Date createTime;//生成时间
+	private List<Role> roles = new ArrayList<Role>(0);
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	//setter getter
@@ -65,5 +71,15 @@ public class Admin implements Serializable{
 	public void setCreateTime(Date createTime) {
 		this.createTime = createTime;
 	}
-	
+	@ManyToMany
+	@JoinTable(name="role_admin",
+		joinColumns=@JoinColumn(name="admin_id",referencedColumnName="id"),
+		inverseJoinColumns=@JoinColumn(name="role_id",referencedColumnName="id")
+	)
+	public List<Role> getRoles() {
+		return roles;
+	}
+	public void setRoles(List<Role> roles) {
+		this.roles = roles;
+	}
 }

@@ -5,6 +5,20 @@
   <welcome-file-list>
     <welcome-file>index.jsp</welcome-file>
   </welcome-file-list>
+  <!-- 404 -->
+  <!-- <error-page>
+  	<error-code>404</error-code>
+  	<location>/error.jsp</location>
+  </error-page> -->
+  <!-- 权限拦截  过滤器放在struts拦截器后就不会拦截action url-->
+  <filter>
+  	<filter-name>permission</filter-name>
+  	<filter-class>cn.yjava.core.filter.PermissionFilter</filter-class>
+  </filter>
+  <filter-mapping>
+  	<filter-name>permission</filter-name>
+  	<url-pattern>/admin/*</url-pattern>
+  </filter-mapping>
   <!-- struts拦截器 -->
   <filter>
   	<filter-name>struts2</filter-name>
@@ -14,6 +28,21 @@
   	<filter-name>struts2</filter-name>
   	<url-pattern>/*</url-pattern>
   </filter-mapping>
+  <!-- 编码拦截控制 -->
+  <filter>
+	<filter-name>encoding</filter-name>
+	<filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
+	<init-param>
+		<param-name>encoding</param-name>
+		<param-value>UTF-8</param-value>
+	</init-param>
+  </filter>
+  <filter-mapping>
+	<filter-name>encoding</filter-name>
+	<url-pattern>/*</url-pattern>
+  </filter-mapping>
+  
+  
   <!-- 注册bean.xml文件,初始化 spring容器-->
   <context-param>
   	<param-name>contextConfigLocation</param-name>
@@ -26,24 +55,12 @@
   </listener>
   <!-- Spring 刷新Introspector防止内存泄露 -->
   <listener>
-	  <listener-class>org.springframework.web.util.IntrospectorCleanupListener</listener-class>
+	<listener-class>org.springframework.web.util.IntrospectorCleanupListener</listener-class>
   </listener>
-  <!-- 编码拦截控制 -->
+  <!-- 这个配置是指,hiberante在进行级联查询的时候，可以会牵涉session关闭而无法获取session对象 session会话的延续，消耗性能 -->
   <filter>
-	  <filter-name>encoding</filter-name>
-	  <filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
-	  <init-param>
-		  <param-name>encoding</param-name>
-		  <param-value>UTF-8</param-value>
-	  </init-param>
-  </filter>
-  <filter-mapping>
-	  <filter-name>encoding</filter-name>
-	  <url-pattern>/*</url-pattern>
-  </filter-mapping>
-  <filter>
-      <filter-name>OpenSessionInViewFilter</filter-name>
-      <filter-class>org.springframework.orm.hibernate4.support.OpenSessionInViewFilter</filter-class>
+    <filter-name>OpenSessionInViewFilter</filter-name>
+    <filter-class>org.springframework.orm.hibernate4.support.OpenSessionInViewFilter</filter-class>
   </filter>
 
   <filter-mapping>
