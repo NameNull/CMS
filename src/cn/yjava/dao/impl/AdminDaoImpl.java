@@ -23,7 +23,7 @@ import cn.yjava.model.Admin;
 public class AdminDaoImpl extends BaseDao implements IAdminDao{
 
 	@Override
-	public Admin find(String account, String password) {
+	public Admin get(String account, String password) {
 		String hql = "from Admin where account = ? and password = ?";
 		Query query = getSession().createQuery(hql);
 		query.setString(0, account);

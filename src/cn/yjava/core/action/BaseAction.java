@@ -17,7 +17,7 @@ public class BaseAction {
 	public static final String LOGIN="login";
 	public static final String INDEX="index";
 	public static final String EXIT="exit";
-	protected String result="haha";//让子类去继承  
+	protected String result;//让子类去继承  
 	/*public String getResult() {
 		return result;
 	}*/

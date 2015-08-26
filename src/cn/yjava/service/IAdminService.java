@@ -15,11 +15,11 @@ public interface IAdminService {
 	/**
 	 * 
 	 * @description 查询管理员
-	 * @方法名 findAdmin
+	 * @方法名 get
 	 * @param account
 	 * @param password
 	 * @return Admin
 	 * @exception
 	 */
-	public Admin find(String account,String password);
+	public Admin get(String account,String password);
 }

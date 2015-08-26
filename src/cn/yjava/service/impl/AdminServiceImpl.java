@@ -21,7 +21,7 @@ public class AdminServiceImpl implements IAdminService{
 	@Autowired
 	private IAdminDao adminDao;
 	@Override
-	public Admin find(String account, String password) {
-		return adminDao.find(account, password);
+	public Admin get(String account, String password) {
+		return adminDao.get(account, password);
 	}
 }

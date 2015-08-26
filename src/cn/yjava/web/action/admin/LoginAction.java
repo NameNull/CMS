@@ -49,7 +49,7 @@ public class LoginAction extends BaseAction{
 	 * @exception
 	 */
 	public String loginValidate(){
-		Admin admin=adminService.find(account, password);
+		Admin admin=adminService.get(account, password);
 		if(admin!=null){
 			Integer adminId=admin.getId();
 			List<Object[]> permissions=permissionService.find(adminId);
