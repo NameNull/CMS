@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServletResponse;
 import org.apache.struts2.ServletActionContext;
 
 import cn.yjava.core.action.BaseAction;
+import cn.yjava.util.Constant;
 import cn.yjava.util.StringUtils;
 
 import com.opensymphony.xwork2.ActionInvocation;
@@ -29,7 +30,7 @@ public class PermissionInterceptor extends AbstractInterceptor{
 		HttpServletRequest request=ServletActionContext.getRequest();
 		HttpServletResponse response=ServletActionContext.getResponse();
 		@SuppressWarnings("unchecked")
-		List<Object[]> permissions = (List<Object[]>) request.getSession().getAttribute("adminPermission");
+		List<Object[]> permissions = (List<Object[]>) request.getSession().getAttribute(Constant.SESSION_PERMISSION);
 		String requestType=request.getHeader("X-Requested-With");
 		String url = request.getRequestURI();
 		if(StringUtils.isNotEmpty(requestType)&&requestType.equals("XMLHttpRequest")){
@@ -53,7 +54,7 @@ public class PermissionInterceptor extends AbstractInterceptor{
 		if((objects==null) || objects.size()==0)return false;
 		boolean flag = false;
 		for (Object[] object : objects) {
-			String linkUrl = String.valueOf(object[1]);// /index
+			String linkUrl = String.valueOf(object[1]);
 			if(url.indexOf(linkUrl)!=-1){
 				flag= true;
 				break;

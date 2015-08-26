@@ -11,7 +11,32 @@
   <short-name>yj</short-name>
   <!-- 自定义标签uri//如果采用jstl1.2以上版本可以不写 -->
   <uri></uri>
- 	
+ <!-- 业务标签 -->
+  <tag>
+  	<description>权限标签</description>
+  	<name>permission</name>
+  	<tag-class>cn.yjava.core.tld.PermissionTld</tag-class>
+  	<body-content>JSP</body-content>
+  	<attribute>
+  		<description>权限链接地址</description>
+  		<name>url</name>
+  		<required>true</required>
+  		<rtexprvalue>true</rtexprvalue>
+  	</attribute>
+  </tag>
+  <tag>
+  	<description>链接匹配标签</description>
+  	<name>links</name>
+  	<tag-class>cn.yjava.core.tld.LinksTld</tag-class>
+  	<body-content>JSP</body-content>
+  	<attribute>
+  		<description>权限链接地址</description>
+  		<name>url</name>
+  		<required>true</required>
+  		<rtexprvalue>true</rtexprvalue>
+  	</attribute>
+  </tag>
+  <!-- 方法 -->
   <function>
   <!-- 方法描述 -->
     <description>

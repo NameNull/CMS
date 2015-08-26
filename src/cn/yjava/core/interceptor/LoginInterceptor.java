@@ -6,6 +6,7 @@ import org.apache.struts2.ServletActionContext;
 
 import cn.yjava.core.action.BaseAction;
 import cn.yjava.model.Admin;
+import cn.yjava.util.Constant;
 import cn.yjava.util.StringUtils;
 
 import com.opensymphony.xwork2.ActionInvocation;
@@ -25,7 +26,7 @@ public class LoginInterceptor extends AbstractInterceptor{
 
 	public String intercept(ActionInvocation invacation) throws Exception {
 		HttpServletRequest request=ServletActionContext.getRequest();
-		Admin admin=(Admin) request.getSession().getAttribute("adminSession");
+		Admin admin=(Admin) request.getSession().getAttribute(Constant.SESSION_ADMIN);
 		String requestType=request.getHeader("X-Requested-With");
 		if(admin==null){
 			if(StringUtils.isNotEmpty(requestType)&&requestType.equals("XMLHttpRequest")){
