@@ -12,17 +12,17 @@ import javax.persistence.Table;
 
 /**
  * 
- * @title Content
- * @description 内容实体类 
+ * @title News
+ * @description 新闻实体类 
  * @author 俞杰
- * @time 2015年09月03日 10:21:53
+ * @time 2015年09月03日 10:35:00
  * @version 1.0.0
  * @since JDK1.7
  */
 @SuppressWarnings("serial")
 @Entity
-@Table(name = "content")
-public class Content implements Serializable {
+@Table(name = "news")
+public class News implements Serializable {
 	private Integer id;// 主键
 	private String name;// 名称
 	private Integer isDelete;// 删除状态0未删除1删除

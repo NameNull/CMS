@@ -7,10 +7,10 @@ import cn.yjava.core.action.BaseAction;
 
 /**
  * 
- * @title IndexAction 
- * @description  后台首页处理类
+ * @title NewsAction 
+ * @description  新闻处理类
  * @author 俞杰
- * @time 2015年8月24日-上午9:26:26
+ * @time 2015年09月03日 10:35:00
  * @version 1.0.0
  * @since JDK1.7
  */
@@ -19,7 +19,7 @@ import cn.yjava.core.action.BaseAction;
 public class NewsAction extends BaseAction{
 	/**
 	 * 
-	 * @description 新闻栏页
+	 * @description 进入页面
 	 * @方法名 list
 	 * @return String
 	 * @exception

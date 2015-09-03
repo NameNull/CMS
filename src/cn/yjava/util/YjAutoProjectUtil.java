@@ -9,23 +9,25 @@ import org.apache.commons.io.FileUtils;
 
 public class YjAutoProjectUtil {
 	
+	private static String description="新闻";
+	private static  String entity = "News";
+	private static  String lowEntity = "news";
+	
+	private static String srcPath="src\\cn\\yjava\\";
 	private static String author="俞杰";
-	private static String description="内容";
-	private static  String date = new SimpleDateFormat("yyyy年MM月dd日 HH:mm:ss").format(new Date());
-	private static  String entity = "Content";
-	private static  String lowEntity = "content";
+	private static String date = new SimpleDateFormat("yyyy年MM月dd日 HH:mm:ss").format(new Date());
 	
 	public static void main(String[] args){
 		//实体类
-		create("entity", "src\\cn\\yjava\\model\\", entity+".java");
+		create("entity", srcPath+"model\\", entity+".java");
 		//逻辑层
-		create("dao", "src\\cn\\yjava\\dao\\", "I"+entity+"Dao.java");
-		create("daoImpl", "src\\cn\\yjava\\dao\\impl\\", entity+"DaoImpl.java");
+		create("dao", srcPath+"dao\\", "I"+entity+"Dao.java");
+		create("daoImpl", srcPath+"dao\\impl\\", entity+"DaoImpl.java");
 		//业务层
-		create("service", "src\\cn\\yjava\\service\\", "I"+entity+"Service.java");
-		create("serviceImpl", "src\\cn\\yjava\\service\\impl\\", entity+"ServiceImpl.java");
+		create("service", srcPath+"service\\", "I"+entity+"Service.java");
+		create("serviceImpl", srcPath+"service\\impl\\", entity+"ServiceImpl.java");
 		//控制层
-		create("action", "src\\cn\\yjava\\web\\action\\admin\\", entity+"Action.java");
+		create("action", srcPath+"web\\action\\admin\\", entity+"Action.java");
 		//页面
 		create("list", "WebRoot\\WEB-INF\\pages\\", lowEntity+".jsp");
 	}
