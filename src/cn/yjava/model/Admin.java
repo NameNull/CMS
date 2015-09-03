@@ -34,6 +34,8 @@ public class Admin implements Serializable{
 	private String password;//密码
 	private Date createTime;//生成时间
 	private List<Role> roles = new ArrayList<Role>(0);
+	public Admin(){}
+	public Admin(Integer id){this.id=id;}
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	//setter getter
