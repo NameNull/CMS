@@ -79,7 +79,4 @@ public class LoginAction extends BaseAction{
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	public String getResult() {
-		return result;
-	}
 }

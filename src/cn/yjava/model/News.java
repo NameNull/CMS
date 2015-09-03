@@ -8,6 +8,9 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.Lob;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 /**
@@ -15,7 +18,7 @@ import javax.persistence.Table;
  * @title News
  * @description 新闻实体类 
  * @author 俞杰
- * @time 2015年09月03日 10:35:00
+ * @time 2015年09月03日 16:11:56
  * @version 1.0.0
  * @since JDK1.7
  */
@@ -24,11 +27,28 @@ import javax.persistence.Table;
 @Table(name = "news")
 public class News implements Serializable {
 	private Integer id;// 主键
-	private String name;// 名称
 	private Integer isDelete;// 删除状态0未删除1删除
 	private Integer state;// 0未发布1发布
 	private Date createTime;// 创建时间
 	private Date updateTime;// 更新时间
+	private String title;//标题
+	private String subTitle;//副标题
+	private String description;//摘要
+	private String content;//内容
+	private String author;//作者
+	private Date publishDate;//发表时间
+	private String imgPath;//图片路径
+	private Integer channelId;//栏目id
+	private String keyword;//关键词
+	private String tag;//标签
+	private Integer sort;//排序
+	private Integer hitNum;//点击数
+	private Integer isTop;//是否置顶 0未置顶 1置顶
+	private Integer isComment;//是否允许评论 0不允许 1允许
+	private String comeFrom;//文章来源
+	private String staticUrl;//静态化的地址
+	private String sourceUrl;//原地址
+	private Admin admin;//操作管理员
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -38,15 +58,6 @@ public class News implements Serializable {
 
 	public void setId(Integer id) {
 		this.id = id;
-	}
-
-	@Column(name = "name", length = 100)
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
 	}
 
 	@Column(name = "is_delete", length = 1)
@@ -84,4 +95,168 @@ public class News implements Serializable {
 	public void setUpdateTime(Date updateTime) {
 		this.updateTime = updateTime;
 	}
+	
+	@Column(name="title",length=200,nullable=false)
+	public String getTitle() {
+		return title;
+	}
+	
+	public void setTitle(String title) {
+		this.title = title;
+	}
+
+	@Column(name = "sub_title", length = 100)
+	public String getSubTitle() {
+		return subTitle;
+	}
+
+	public void setSubTitle(String subTitle) {
+		this.subTitle = subTitle;
+	}
+
+	@Column(name = "description", length = 500)
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+	
+	@Lob
+	@Column(name = "content")
+	public String getContent() {
+		return content;
+	}
+
+	public void setContent(String content) {
+		this.content = content;
+	}
+
+	@Column(name = "author", length = 20)
+	public String getAuthor() {
+		return author;
+	}
+
+	public void setAuthor(String author) {
+		this.author = author;
+	}
+
+	@Column(name = "publish_date")
+	public Date getPublishDate() {
+		return publishDate;
+	}
+
+	public void setPublishDate(Date publishDate) {
+		this.publishDate = publishDate;
+	}
+
+	@Column(name = "img_path", length = 120)
+	public String getImgPath() {
+		return imgPath;
+	}
+
+	public void setImgPath(String imgPath) {
+		this.imgPath = imgPath;
+	}
+	@Column(name = "channel_id")
+	public Integer getChannelId() {
+		return channelId;
+	}
+
+	public void setChannelId(Integer channelId) {
+		this.channelId = channelId;
+	}
+
+	@Column(name = "keyword")
+	public String getKeyword() {
+		return keyword;
+	}
+
+	public void setKeyword(String keyword) {
+		this.keyword = keyword;
+	}
+
+	@Column(name = "tag", length = 100)
+	public String getTag() {
+		return tag;
+	}
+
+	public void setTag(String tag) {
+		this.tag = tag;
+	}
+
+	@Column(name = "sort")
+	public Integer getSort() {
+		return sort;
+	}
+
+	public void setSort(Integer sort) {
+		this.sort = sort;
+	}
+
+	@Column(name = "hit_num")
+	public Integer getHitNum() {
+		return hitNum;
+	}
+
+	public void setHitNum(Integer hitNum) {
+		this.hitNum = hitNum;
+	}
+	
+	@Column(name = "is_top", length = 1)
+	public Integer getIsTop() {
+		return isTop;
+	}
+
+	public void setIsTop(Integer isTop) {
+		this.isTop = isTop;
+	}
+
+	@Column(name = "is_comment", length = 1)
+	public Integer getIsComment() {
+		return isComment;
+	}
+
+	public void setIsComment(Integer isComment) {
+		this.isComment = isComment;
+	}
+
+	@Column(name = "come_form", length = 30)
+	public String getComeFrom() {
+		return comeFrom;
+	}
+
+	public void setComeFrom(String comeFrom) {
+		this.comeFrom = comeFrom;
+	}
+
+	@Column(name = "static_url", length = 200)
+	public String getStaticUrl() {
+		return staticUrl;
+	}
+
+	public void setStaticUrl(String staticUrl) {
+		this.staticUrl = staticUrl;
+	}
+
+	@Column(name = "source_url", length = 500)
+	public String getSourceUrl() {
+		return sourceUrl;
+	}
+
+	public void setSourceUrl(String sourceUrl) {
+		this.sourceUrl = sourceUrl;
+	}
+
+	@ManyToOne
+	@JoinColumn(name = "admin_id")
+	public Admin getAdmin() {
+		return admin;
+	}
+
+	public void setAdmin(Admin admin) {
+		this.admin = admin;
+	}
+	
 }

@@ -1,17 +1,20 @@
 package cn.yjava.core.dao.impl;
 
 import java.io.Serializable;
+import java.util.List;
 
 import javax.transaction.Transactional;
 
 import org.hibernate.LockMode;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.criterion.DetachedCriteria;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.util.Assert;
 
 import cn.yjava.core.dao.IBaseDao;
 import cn.yjava.core.dao.util.TmReflectionUtils;
+import cn.yjava.model.PageInfo;
 
 /**
  * 
@@ -131,5 +134,33 @@ public class BaseDaoImpl<T,PK extends Serializable> implements IBaseDao<T, PK>{
 			entity = (T) getSession().load(getEntityClass(), id);
 		}
 		return entity;
+	}
+	
+	/**
+	 * 
+	 * @description 获取当前离线查询对象
+	 * @方法名 getCurrentDetachedCriteria
+	 * @return DetachedCriteria
+	 * @exception
+	 */
+	public DetachedCriteria getCurrentDetachedCriteria() {
+		return DetachedCriteria.forClass(getEntityClass());
+	}
+	
+	@SuppressWarnings("unchecked")
+	public List<T> findByDetachedCriteria(final DetachedCriteria detachedCriteria,final PageInfo pageInfo){
+		return detachedCriteria.getExecutableCriteria(getSession())
+				.setFirstResult(Integer.parseInt(pageInfo.getFirstResult()))
+				.setMaxResults(Integer.parseInt(pageInfo.getMaxResults()))
+				.list();
+	}
+	
+	
+	@SuppressWarnings("unchecked")
+	public List<T> findByDetachedCriteria(final DetachedCriteria detachedCriteria,Integer pageNo,Integer pageSize){
+		return detachedCriteria.getExecutableCriteria(getSession())
+				.setFirstResult(pageNo)
+				.setMaxResults(pageSize)
+				.list();
 	}
 }
