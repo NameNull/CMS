@@ -5,7 +5,7 @@ import javax.transaction.Transactional;
 import org.hibernate.Query;
 import org.springframework.stereotype.Repository;
 
-import cn.yjava.core.dao.BaseDao;
+import cn.yjava.core.dao.impl.BaseDaoImpl;
 import cn.yjava.dao.IAdminDao;
 import cn.yjava.model.Admin;
 
@@ -20,8 +20,10 @@ import cn.yjava.model.Admin;
  */
 @Repository
 @Transactional
-public class AdminDaoImpl extends BaseDao implements IAdminDao{
-
+public class AdminDaoImpl extends BaseDaoImpl<Admin,Integer> implements IAdminDao{
+	/**
+	 * 根据用户名密码查询管理员
+	 */
 	@Override
 	public Admin get(String account, String password) {
 		String hql = "from Admin where account = ? and password = ?";

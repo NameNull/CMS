@@ -6,8 +6,9 @@ import javax.transaction.Transactional;
 
 import org.springframework.stereotype.Repository;
 
-import cn.yjava.core.dao.BaseDao;
+import cn.yjava.core.dao.impl.BaseDaoImpl;
 import cn.yjava.dao.IPermissionDao;
+import cn.yjava.model.Permission;
 /**
  * 
  * @title PermissionDaoImpl 
@@ -19,8 +20,10 @@ import cn.yjava.dao.IPermissionDao;
  */
 @Repository
 @Transactional
-public class PermissionDaoImpl extends BaseDao implements IPermissionDao{
-
+public class PermissionDaoImpl extends BaseDaoImpl<Permission,Integer> implements IPermissionDao{
+	/**
+	 * 根据管理员id查询相关权限
+	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public List<Object[]> find(Integer adminId) {
@@ -32,5 +35,4 @@ public class PermissionDaoImpl extends BaseDao implements IPermissionDao{
 			" WHERE a.id=?";
 		return getSession().createSQLQuery(sql).setInteger(0, adminId).list();
 	}
-
 }

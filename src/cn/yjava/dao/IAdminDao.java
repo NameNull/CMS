@@ -1,5 +1,6 @@
 package cn.yjava.dao;
 
+import cn.yjava.core.dao.IBaseDao;
 import cn.yjava.model.Admin;
 
 /**
@@ -11,10 +12,10 @@ import cn.yjava.model.Admin;
  * @version 1.0.0
  * @since JDK1.7
  */
-public interface IAdminDao {
+public interface IAdminDao extends IBaseDao<Admin, Integer>{
 	/**
 	 * 
-	 * @description 查询管理员
+	 * @description 根据用户名密码查询管理员
 	 * @方法名 get
 	 * @param account
 	 * @param password

@@ -5,8 +5,9 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import cn.yjava.core.dao.BaseDao;
+import cn.yjava.core.service.impl.BaseServiceImpl;
 import cn.yjava.dao.IPermissionDao;
+import cn.yjava.model.Permission;
 import cn.yjava.service.IPermissionService;
 /**
  * 
@@ -18,11 +19,22 @@ import cn.yjava.service.IPermissionService;
  * @since JDK1.7
  */
 @Service
-public class PermissionServiceImpl extends BaseDao implements IPermissionService{
+public class PermissionServiceImpl extends BaseServiceImpl<Permission,Integer> implements IPermissionService{
+	
+	public IPermissionDao getPermissionDao() {
+		return (IPermissionDao) super.getBaseDao();
+	}
+	
 	@Autowired
-	private IPermissionDao permissionDao;
+	public void setPermissionDao(IPermissionDao permissionDao) {
+		super.setBaseDao(permissionDao);
+	}
+	
+	/**
+	 * 根据管理员id查询相关权限
+	 */
 	@Override
 	public List<Object[]> find(Integer adminId) {
-		return permissionDao.find(adminId);
+		return getPermissionDao().find(adminId);
 	}
 }

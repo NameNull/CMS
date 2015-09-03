@@ -3,6 +3,7 @@ package cn.yjava.service.impl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import cn.yjava.core.service.impl.BaseServiceImpl;
 import cn.yjava.dao.IAdminDao;
 import cn.yjava.model.Admin;
 import cn.yjava.service.IAdminService;
@@ -17,11 +18,22 @@ import cn.yjava.service.IAdminService;
  * @since JDK1.7
  */
 @Service
-public class AdminServiceImpl implements IAdminService{
+public class AdminServiceImpl extends BaseServiceImpl<Admin,Integer> implements IAdminService{
+	
+	public IAdminDao getAdminDao() {
+		return (IAdminDao) super.getBaseDao();
+	}
+	
 	@Autowired
-	private IAdminDao adminDao;
+	public void setAdminDao(IAdminDao adminDao) {
+		super.setBaseDao(adminDao);
+	}
+	
+	/**
+	 * 根据账号密码查询管理员
+	 */
 	@Override
 	public Admin get(String account, String password) {
-		return adminDao.get(account, password);
+		return getAdminDao().get(account, password);
 	}
 }

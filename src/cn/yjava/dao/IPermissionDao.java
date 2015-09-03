@@ -2,6 +2,9 @@ package cn.yjava.dao;
 
 import java.util.List;
 
+import cn.yjava.core.dao.IBaseDao;
+import cn.yjava.model.Permission;
+
 /**
  * 
  * @title PermissionDao 
@@ -11,10 +14,10 @@ import java.util.List;
  * @version 1.0.0
  * @since JDK1.7
  */
-public interface IPermissionDao {
+public interface IPermissionDao extends IBaseDao<Permission, Integer>{
 	/**
 	 * 
-	 * @description 查询权限
+	 * @description 根据管理员id查询相关权限
 	 * @方法名 find
 	 * @param adminId
 	 * @return List<Object>

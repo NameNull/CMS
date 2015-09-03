@@ -1,3 +1,5 @@
 1.前台：springmvc+mybatis
 2.后台：spring4+hibernate4+struts2.3.24(不建议使用struts2,在2.3.16版本出现ddos漏洞)
 3.web中过滤器有先后,其他过滤器放在struts拦截器后,就不会处理action url,因为先后关系struts拦截器先处理了action返回result.因此如果其他过滤器需要处理action url的话必须放在前边
+4.权限树
+5.dao-service-web-jsp模板

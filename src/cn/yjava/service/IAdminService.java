@@ -1,5 +1,6 @@
 package cn.yjava.service;
 
+import cn.yjava.core.service.IBaseService;
 import cn.yjava.model.Admin;
 
 /**
@@ -11,10 +12,10 @@ import cn.yjava.model.Admin;
  * @version 1.0.0
  * @since JDK1.7
  */
-public interface IAdminService {
+public interface IAdminService extends IBaseService<Admin, Integer>{
 	/**
 	 * 
-	 * @description 查询管理员
+	 * @description 根据账号密码查询管理员
 	 * @方法名 get
 	 * @param account
 	 * @param password
