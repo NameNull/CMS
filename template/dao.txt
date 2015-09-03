@@ -1,0 +1,17 @@
+package cn.yjava.dao;
+
+import cn.yjava.core.dao.IBaseDao;
+import cn.yjava.model.[entity];
+
+/**
+ * 
+ * @title I[entity]Dao 
+ * @description [description]业务逻辑层 
+ * @author [author]
+ * @time [date]
+ * @version 1.0.0
+ * @since JDK1.7
+ */
+public interface I[entity]Dao extends IBaseDao<[entity], Integer>{
+	
+}

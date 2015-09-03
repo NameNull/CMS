@@ -45,7 +45,7 @@
     <!-- 标签名 -->
     <name>getTimeFormat</name>
     <!-- 对应java类 -->
-    <function-class>cn.yjava.util.DateUtils</function-class>
+    <function-class>cn.yjava.util.YjDateUtils</function-class>
     <!-- 对应类中方法 -->
     <function-signature>String getTimeFormat(java.util.Date)</function-signature>
     <!-- 示例 -->
@@ -59,7 +59,7 @@
     	  日期：String日期转成Date...
     </description>
     <name>stringToDate</name>
-    <function-class>cn.yjava.util.DateUtils</function-class>
+    <function-class>cn.yjava.util.YjDateUtils</function-class>
     <function-signature>Date stringToDate(java.lang.String)</function-signature>
     <example>
       ${yj:stringToDate("2015-1-11 13:13:13")}
@@ -71,7 +71,7 @@
     	  日期格式化：yyyy:MM:dd HH:mm:ss
     </description>
     <name>formatDate</name>
-    <function-class>cn.yjava.util.DateUtils</function-class>
+    <function-class>cn.yjava.util.YjDateUtils</function-class>
     <function-signature>String formatDate(java.util.Date,java.lang.String)</function-signature>
     <example>
       ${yj:formatDate(new Date(),"MM")}
@@ -83,7 +83,7 @@
     	  数字转日期：9999--九千九百九十九
     </description>
     <name>intToNumber</name>
-    <function-class>cn.yjava.util.StringUtils</function-class>
+    <function-class>cn.yjava.util.YjStringUtils</function-class>
     <function-signature>String intToChnNumConverter(int)</function-signature>
     <example>
       ${yj:intToNumber(1)}
@@ -95,7 +95,7 @@
     	  截取文章
     </description>
     <name>cutContent</name>
-    <function-class>cn.yjava.util.StringUtils</function-class>
+    <function-class>cn.yjava.util.YjStringUtils</function-class>
     <function-signature>String cutContent(java.lang.String,int,int)</function-signature>
     <example>
       ${yj:cutContent("你好吗",0,1)}

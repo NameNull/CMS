@@ -11,7 +11,7 @@ import cn.yjava.core.action.BaseAction;
 import cn.yjava.model.Admin;
 import cn.yjava.service.IAdminService;
 import cn.yjava.service.IPermissionService;
-import cn.yjava.util.Constant;
+import cn.yjava.util.YjConstant;
 
 /**
  * 
@@ -53,8 +53,8 @@ public class LoginAction extends BaseAction{
 		if(admin!=null){
 			Integer adminId=admin.getId();
 			List<Object[]> permissions=permissionService.find(adminId);
-			ServletActionContext.getRequest().getSession().setAttribute(Constant.SESSION_PERMISSION,permissions);
-			ServletActionContext.getRequest().getSession().setAttribute(Constant.SESSION_ADMIN, admin);
+			ServletActionContext.getRequest().getSession().setAttribute(YjConstant.SESSION_PERMISSION,permissions);
+			ServletActionContext.getRequest().getSession().setAttribute(YjConstant.SESSION_ADMIN, admin);
 			result=SUCCESS;
 		}else{
 			result=FAIL;

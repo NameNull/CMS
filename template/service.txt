@@ -1,0 +1,17 @@
+package cn.yjava.service;
+
+import cn.yjava.core.service.IBaseService;
+import cn.yjava.model.[entity];
+
+/**
+ * 
+ * @title I[entity]Dao 
+ * @description [description]业务层
+ * @author [author]
+ * @time [date]
+ * @version 1.0.0
+ * @since JDK1.7
+ */
+public interface I[entity]Service extends IBaseService<[entity], Integer>{
+	
+}

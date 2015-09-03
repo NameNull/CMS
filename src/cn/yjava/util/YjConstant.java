@@ -8,7 +8,7 @@ package cn.yjava.util;
  * @version 1.0.0
  * @since JDK1.7
  */
-public class Constant {
+public class YjConstant {
 	//后台管理员session
 	public static final String SESSION_PERMISSION="adminPermission";
 	//后台管理员权限session

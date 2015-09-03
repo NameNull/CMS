@@ -8,8 +8,8 @@ import javax.servlet.http.HttpServletResponse;
 import org.apache.struts2.ServletActionContext;
 
 import cn.yjava.core.action.BaseAction;
-import cn.yjava.util.Constant;
-import cn.yjava.util.StringUtils;
+import cn.yjava.util.YjConstant;
+import cn.yjava.util.YjStringUtils;
 
 import com.opensymphony.xwork2.ActionInvocation;
 import com.opensymphony.xwork2.interceptor.AbstractInterceptor;
@@ -30,10 +30,10 @@ public class PermissionInterceptor extends AbstractInterceptor{
 		HttpServletRequest request=ServletActionContext.getRequest();
 		HttpServletResponse response=ServletActionContext.getResponse();
 		@SuppressWarnings("unchecked")
-		List<Object[]> permissions = (List<Object[]>) request.getSession().getAttribute(Constant.SESSION_PERMISSION);
+		List<Object[]> permissions = (List<Object[]>) request.getSession().getAttribute(YjConstant.SESSION_PERMISSION);
 		String requestType=request.getHeader("X-Requested-With");
 		String url = request.getRequestURI();
-		if(StringUtils.isNotEmpty(requestType)&&requestType.equals("XMLHttpRequest")){
+		if(YjStringUtils.isNotEmpty(requestType)&&requestType.equals("XMLHttpRequest")){
 			if(isPersmission(url,permissions)){
 				return invacation.invoke();
 			}else{

@@ -12,7 +12,23 @@ import java.text.DecimalFormat;
  * @version 1.0.0
  * @since JDK1.7
  */
-public class FileUtils {
+public class YjFileUtils {
+	/**
+	 * 
+	 * @description 获取项目所在文件夹根目录路径 如：F:\项目\cms
+	 * @方法名 getPath
+	 * @param appendPath
+	 * @return String
+	 * @exception
+	 */
+	public static String getPath(String appendPath){
+		String path = System.getProperty("user.dir");
+		if(YjStringUtils.isEmpty(appendPath)){
+			return path;
+		}else{
+			return path+"\\"+appendPath;
+		}
+	}
 	/**
 	 * 
 	 * @description 根据文件路径名得到文件大小

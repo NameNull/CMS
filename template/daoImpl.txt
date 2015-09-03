@@ -1,0 +1,24 @@
+package cn.yjava.dao.impl;
+
+import javax.transaction.Transactional;
+
+import org.springframework.stereotype.Repository;
+
+import cn.yjava.core.dao.impl.BaseDaoImpl;
+import cn.yjava.dao.I[entity]Dao;
+import cn.yjava.model.[entity];
+
+/**
+ * 
+ * @title [entity]DaoImpl 
+ * @description [description]业务逻辑实现类 
+ * @author [author]
+ * @time [date]
+ * @version 1.0.0
+ * @since JDK1.7
+ */
+@Repository
+@Transactional
+public class [entity]DaoImpl extends BaseDaoImpl<[entity],Integer> implements I[entity]Dao{
+	
+}

@@ -7,7 +7,7 @@ import javax.servlet.jsp.JspException;
 import javax.servlet.jsp.JspWriter;
 import javax.servlet.jsp.tagext.BodyTagSupport;
 
-import cn.yjava.util.Constant;
+import cn.yjava.util.YjConstant;
 
 /**
  * 
@@ -26,7 +26,7 @@ public class PermissionTld extends BodyTagSupport{
 	@Override
 	public void doInitBody() throws JspException {
 		//如果body循环执行 最好把初始化一次的都放这儿
-		permissions=(List<Object[]>) this.pageContext.getSession().getAttribute(Constant.SESSION_PERMISSION);
+		permissions=(List<Object[]>) this.pageContext.getSession().getAttribute(YjConstant.SESSION_PERMISSION);
 	}
 	@Override
 	public int doAfterBody() throws JspException {

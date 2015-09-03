@@ -13,7 +13,7 @@ import java.util.Date;
  * @version 1.0.0
  * @since JDK1.7
  */
-public class DateUtils {
+public class YjDateUtils {
 	/**
 	 * 
 	 * @description 日期转成字符串（格式化日期）
@@ -25,7 +25,7 @@ public class DateUtils {
 	 */
 	public static String formatDate(Date date,String pattern){
 		if(date==null)date=new Date();
-		if(StringUtils.isEmpty(pattern))pattern = "yyyy-MM-dd HH:mm:ss";
+		if(YjStringUtils.isEmpty(pattern))pattern = "yyyy-MM-dd HH:mm:ss";
 		java.text.SimpleDateFormat format = new SimpleDateFormat(pattern);
 		return format.format(date);
 	}

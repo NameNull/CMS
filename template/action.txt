@@ -1,0 +1,30 @@
+package cn.yjava.web.action.admin;
+
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Controller;
+
+import cn.yjava.core.action.BaseAction;
+
+/**
+ * 
+ * @title [entity]Action 
+ * @description  [description]处理类
+ * @author [author]
+ * @time [date]
+ * @version 1.0.0
+ * @since JDK1.7
+ */
+@Controller
+@Scope("prototype")
+public class [entity]Action extends BaseAction{
+	/**
+	 * 
+	 * @description 进入页面
+	 * @方法名 list
+	 * @return String
+	 * @exception
+	 */
+	public String list(){
+		return SUCCESS;
+	}
+}

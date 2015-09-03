@@ -7,7 +7,7 @@ import java.util.HashMap;
 
 import sun.misc.BASE64Encoder;
 
-public class StringUtils {
+public class YjStringUtils {
 	/**
 	 * 
 	 * @description md5加密 
@@ -47,7 +47,7 @@ public class StringUtils {
 	 * @exception
 	 */
 	public static String cutContent(String content,int begin,int end){
-		if(StringUtils.isEmpty(content))return "";
+		if(YjStringUtils.isEmpty(content))return "";
 		String start = "";
 		String result = "";
 		if(content.length() > end){
@@ -182,7 +182,7 @@ public class StringUtils {
 	 * @exception
 	 */
 	public static String toLower(String content){
-		if(StringUtils.isEmpty(content))return null;
+		if(YjStringUtils.isEmpty(content))return null;
 		return content.toLowerCase();
 	}
 	/**
@@ -194,7 +194,7 @@ public class StringUtils {
 	 * @exception
 	 */
 	public static String toUpper(String content){
-		if(StringUtils.isEmpty(content))return null;
+		if(YjStringUtils.isEmpty(content))return null;
 		return content.toUpperCase();
 	}
 	/**
@@ -241,7 +241,7 @@ public class StringUtils {
 		if(objects!=null && objects.length>0){
 			format = objects[0];
 		}
-		return StringUtils.doubleToString((num/totalCount)*100,format)+"%";
+		return YjStringUtils.doubleToString((num/totalCount)*100,format)+"%";
 	}
 	/**
 	 * 
