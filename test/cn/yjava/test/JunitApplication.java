@@ -38,7 +38,7 @@ public class JunitApplication {
 		List<Object[]> objects = pemissionService.find(1);
 		System.out.println(JSONUtil.serialize(objects));
 	}*/
-	@Autowired
+	/*@Autowired
 	private INewsDao newsDao;
 	@Test
 	public void handle(){
@@ -81,5 +81,20 @@ public class JunitApplication {
 				continue;
 			}
 		}
+	}*/
+	@Autowired
+	private INewsDao newsDao;
+	@Test
+	public void handle(){
+		try {
+			News news=newsDao.deleteById(2);
+			System.out.println(news);
+			System.out.println(news.getId());
+			System.out.println(news.getTitle());
+			System.out.println("11111111111");
+		} catch (Exception e) {
+			System.out.println("222222222222");
+		}
+		
 	}
 }

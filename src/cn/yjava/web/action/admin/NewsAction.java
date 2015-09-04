@@ -38,6 +38,34 @@ public class NewsAction extends BaseAction{
 		pageInfo.setItemCount(String.valueOf(count));
 		return SUCCESS;
 	}
+	/**
+	 * 
+	 * @description 模板技术
+	 * @方法名 newsTemplate
+	 * @return String
+	 * @exception
+	 */
+	public String listTemplate(){
+		newses=newsService.findNews(params, pageInfo);
+		System.out.println(newses);
+		return SUCCESS;
+	}
+	/**
+	 * 
+	 * @description ajax删除单条新闻
+	 * @方法名 delete
+	 * @return String
+	 * @exception
+	 */
+	public String delete(){
+		try {
+			newsService.deleteById(id);
+			result=SUCCESS;
+		} catch (Exception e) {
+			result=FAIL;
+		}
+		return AJAX_SUCCESS;
+	}
 	//setter getter
 	public List<News> getNewses() {
 		return newses;

@@ -4,11 +4,24 @@
     "http://struts.apache.org/dtds/struts-2.3.dtd">
 <struts>
 	<package namespace="/ajax" name="ajax" extends="default">
+		<!-- 登录验证ajax -->
 		<action name="loginValidate" method="loginValidate" class="loginAction">
 			<result type="json" name="ajaxSuccess">
 				<param name="excludeNullProperties">true</param>
 				<param name="ignoreHierarchy">false</param>
 			</result>
 		</action>
+		<!-- ajax -->
+		<action name="admin/*/*/*" method="{2}" class="{1}Action">
+			<param name="id">{3}</param>
+			<result type="json" name="ajaxSuccess">
+				<param name="excludeNullProperties">true</param>
+				<param name="ignoreHierarchy">false</param>
+			</result>
+			<interceptor-ref name="loginInterceptor"></interceptor-ref>
+			<interceptor-ref name="permissionInterceptor"></interceptor-ref>
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+		</action>
+		
 	</package>
 </struts>

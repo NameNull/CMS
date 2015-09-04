@@ -68,8 +68,8 @@ public class GatherNewsUtil {
      * @方法名 gatherContent void
      * @exception
      */
-	public void gatherContent(){
-		String url = "http://news.qq.com/";
+	public static void gatherContent(){
+		String url = "http://news.qq.com/world_index.shtml";
 		String filterUrl  = "http://news.qq.com/a/";
 		Document document = Jsoup.parse(getHtmlResourceByURL(url,"GBK"));//java.net下面api
 		//第三步：抓取网页中所有需要的URL
@@ -89,10 +89,13 @@ public class GatherNewsUtil {
 				String keyword = document2.getElementsByTag("meta").get(2).attr("content");
 				String desc = document2.getElementsByTag("meta").get(3).attr("content");
 				String content = document2.getElementById("Cnt-Main-Article-QQ").html();
-				System.out.println(title+keyword+desc+content+"-----------");
+				System.out.println(title+"-------yj-----"+content);
 			} catch (Exception e) {
 				continue;
 			}
 		}
+	}
+	public static void main(String[] args) {
+		gatherContent();
 	}
 }

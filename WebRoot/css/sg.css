@@ -143,7 +143,7 @@ background-color:#1F1414;
 .tmui-resize-bl{left:0;bottom:0;cursor:ne-resize;}
 /***********************************tmdialog tmwindow end*****************************************/
 /*阴影层*/
-.tmui-overlay-proxy,.tmui-overlay{width:100%;height:100%;background-color:#272B32;position:absolute;top:0;left:0;z-index:99;filter:alpha(opacity=68);-moz-opacity:0.68;-khtml-opacity:0.68;opacity:0.68;}
+.tmui-overlay-proxy,.tmui-overlay{width:100%;height:100%;background-color:#272B32;position:fixed;top:0;left:0;z-index:99;filter:alpha(opacity=68);-moz-opacity:0.68;-khtml-opacity:0.68;opacity:0.68;}
 /*loading*/
 /*tmLoading css*/
 .tmui-loading{padding:16px;color:#444444;z-index:1000;border:1px solid #BED8FE;line-height:16px;position:fixed;background:#EAF3FC;font-size:12px;

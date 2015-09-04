@@ -7,12 +7,12 @@
 			init(opts);
 		});
 	};
-	var zindex = 10;
+	var zindex = 100;
 	function init(opts){
 		var $drag = opts.target;
 		var $handle = opts.handle ? $drag.find(opts.handle) : $drag;
 		var isDraging = false;
-		$drag.css("position","absolute");
+		$drag.css("position","fixed");
 		$handle.css("cursor", "move");
 		var x =0,y=0,l=0,t=0;
 		$handle.mousedown(function(e){
@@ -20,8 +20,8 @@
 			$drag.css("zIndex",zindex);
 			x = e.clientX;//鼠标所在的x坐标
 			y = e.clientY;//鼠标所在的y坐标
-			l = $(this).offset().left;
-			t = $(this).offset().top;
+			l = $(this).parent().position().left;
+			t = $(this).parent().position().top;
 			isDraging = true;
 		});
 
@@ -35,8 +35,8 @@
 			if(isDraging){
 				var newLeft = l + e.clientX - x;//新的左边距
 				var newTop = t + e.clientY - y;//新的顶部边距
-				if(newLeft<=1)newLeft=1;
-				if(newTop<=1)newTop=1;
+				/*if(newLeft<=1)newLeft=1;
+				if(newTop<=1)newTop=1;*/
 				$drag.css({"left":newLeft,"top":newTop});
 			}
 		}).on("mouseup",function(){

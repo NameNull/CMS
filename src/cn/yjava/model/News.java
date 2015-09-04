@@ -59,8 +59,7 @@ public class News implements Serializable {
 	public void setId(Integer id) {
 		this.id = id;
 	}
-
-	@Column(name = "is_delete", length = 1)
+	
 	public Integer getIsDelete() {
 		return isDelete;
 	}
@@ -69,7 +68,6 @@ public class News implements Serializable {
 		this.isDelete = isDelete;
 	}
 
-	@Column(name = "state", length = 1)
 	public Integer getState() {
 		return state;
 	}
@@ -78,7 +76,7 @@ public class News implements Serializable {
 		this.state = state;
 	}
 
-	@Column(name = "create_time", columnDefinition = "timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP")
+	@Column(columnDefinition = "timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP")
 	public Date getCreateTime() {
 		return createTime;
 	}
@@ -87,7 +85,6 @@ public class News implements Serializable {
 		this.createTime = createTime;
 	}
 
-	@Column(name = "update_time")
 	public Date getUpdateTime() {
 		return updateTime;
 	}
@@ -96,7 +93,7 @@ public class News implements Serializable {
 		this.updateTime = updateTime;
 	}
 	
-	@Column(name="title",length=200,nullable=false)
+	@Column(length=200,nullable=false)
 	public String getTitle() {
 		return title;
 	}
@@ -105,7 +102,7 @@ public class News implements Serializable {
 		this.title = title;
 	}
 
-	@Column(name = "sub_title", length = 100)
+	@Column(length = 100)
 	public String getSubTitle() {
 		return subTitle;
 	}
@@ -114,7 +111,7 @@ public class News implements Serializable {
 		this.subTitle = subTitle;
 	}
 
-	@Column(name = "description", length = 500)
+	@Column(length = 500)
 	public String getDescription() {
 		return description;
 	}
@@ -124,7 +121,6 @@ public class News implements Serializable {
 	}
 	
 	@Lob
-	@Column(name = "content")
 	public String getContent() {
 		return content;
 	}
@@ -133,7 +129,7 @@ public class News implements Serializable {
 		this.content = content;
 	}
 
-	@Column(name = "author", length = 20)
+	@Column(length = 20)
 	public String getAuthor() {
 		return author;
 	}
@@ -142,7 +138,6 @@ public class News implements Serializable {
 		this.author = author;
 	}
 
-	@Column(name = "publish_date")
 	public Date getPublishDate() {
 		return publishDate;
 	}
@@ -151,7 +146,7 @@ public class News implements Serializable {
 		this.publishDate = publishDate;
 	}
 
-	@Column(name = "img_path", length = 120)
+	@Column(length = 120)
 	public String getImgPath() {
 		return imgPath;
 	}
@@ -159,7 +154,7 @@ public class News implements Serializable {
 	public void setImgPath(String imgPath) {
 		this.imgPath = imgPath;
 	}
-	@Column(name = "channel_id")
+	
 	public Integer getChannelId() {
 		return channelId;
 	}
@@ -168,7 +163,6 @@ public class News implements Serializable {
 		this.channelId = channelId;
 	}
 
-	@Column(name = "keyword")
 	public String getKeyword() {
 		return keyword;
 	}
@@ -177,7 +171,7 @@ public class News implements Serializable {
 		this.keyword = keyword;
 	}
 
-	@Column(name = "tag", length = 100)
+	@Column(length = 100)
 	public String getTag() {
 		return tag;
 	}
@@ -186,7 +180,6 @@ public class News implements Serializable {
 		this.tag = tag;
 	}
 
-	@Column(name = "sort")
 	public Integer getSort() {
 		return sort;
 	}
@@ -195,7 +188,6 @@ public class News implements Serializable {
 		this.sort = sort;
 	}
 
-	@Column(name = "hit_num")
 	public Integer getHitNum() {
 		return hitNum;
 	}
@@ -204,7 +196,6 @@ public class News implements Serializable {
 		this.hitNum = hitNum;
 	}
 	
-	@Column(name = "is_top", length = 1)
 	public Integer getIsTop() {
 		return isTop;
 	}
@@ -213,7 +204,6 @@ public class News implements Serializable {
 		this.isTop = isTop;
 	}
 
-	@Column(name = "is_comment", length = 1)
 	public Integer getIsComment() {
 		return isComment;
 	}
@@ -222,7 +212,7 @@ public class News implements Serializable {
 		this.isComment = isComment;
 	}
 
-	@Column(name = "come_form", length = 30)
+	@Column(length = 30)
 	public String getComeFrom() {
 		return comeFrom;
 	}
@@ -231,7 +221,7 @@ public class News implements Serializable {
 		this.comeFrom = comeFrom;
 	}
 
-	@Column(name = "static_url", length = 200)
+	@Column(length = 200)
 	public String getStaticUrl() {
 		return staticUrl;
 	}
@@ -240,7 +230,7 @@ public class News implements Serializable {
 		this.staticUrl = staticUrl;
 	}
 
-	@Column(name = "source_url", length = 500)
+	@Column(length = 500)
 	public String getSourceUrl() {
 		return sourceUrl;
 	}

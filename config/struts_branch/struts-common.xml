@@ -14,7 +14,7 @@
 		</action>
 		<!--各个栏目跳转 -->
 		<action name="*/*" method="{2}" class="{1}Action">
-			<result>/WEB-INF/pages/admin/{1}.jsp</result>
+			<result>/WEB-INF/pages/admin/{1}/{2}.jsp</result>
 			<interceptor-ref name="loginInterceptor"></interceptor-ref>
 			<interceptor-ref name="permissionInterceptor"></interceptor-ref>
 			<interceptor-ref name="defaultStack"></interceptor-ref>
