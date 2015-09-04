@@ -37,7 +37,7 @@ input:disabled,select:disabled,textarea:disabled{background:#ccc;}
 .w320{width: 250px;}
 .w360{width: 360px;}
 
-::-webkit-scrollbar{width:8px;height:6px;background:#ccc;}
+::-webkit-scrollbar{width:10px;height:16px;background:#ccc;}
 ::-webkit-scrollbar-button{background-color:#e5e5e5;}
 ::-webkit-scrollbar-track{background:#999;}
 ::-webkit-scrollbar-track-piece{background:#ccc}
@@ -165,11 +165,13 @@ background-color:#1F1414;
 /*分页*/
 .pagination{font-size:12px;}
 .pagination a{text-decoration:none;border:solid 1px #ccc;color:#999;}
-.pagination a,.pagination span{display:block;float:left;padding:0.3em 0.5em;margin-right:5px;margin-bottom:5px;min-width:1em;text-align:center;}
-.pagination .current{background:#999;color:#fff;border:solid 1px #ccc;}
-.pagination .current.prev,.pagination .current.next{color:#999;border-color:#999;background:#fff;}
-.tm_psize_go{padding:5px;margin-right:4px; float:left;height:32px;line-height:32px;position:relative;border:1px solid #ccc;}
-#tm_pagego{height:31px;line-height:31px;width:30px;float:left;text-align:center;border:1px solid #ccc;}
+.pagination a,.pagination span{display:block;float:left;padding:0 5px;margin-right:5px;margin-bottom:5px;min-width:1em;text-align:center;}
+.pagination .current{background:#00929d;color:#fff;padding:0 5px;border:solid 1px #00929d;}
+.pagination .current.prev,.pagination .current.next{display:none;}
+.pagination a:hover{background:#45b3af;color:#fff;border:solid 1px #45b3af;}
+.tm_psize_go{padding:5px;margin-right:4px; float:left;height:26px;line-height:26px;padding:0 5px;position:relative;border:1px solid #ccc;}
+#tm_pagego{height: 24px;line-height: 24px;width: 24px;float:left;text-align:center;border:1px solid #ccc;}
+
 /*date*/
 .slideboxRight{background:#383838;background:-webkit-linear-gradient(#272B32,#354);background:-moz-linear-gradient(#272B32,#354);background:-o-linear-gradient(#272B32,#354);background:-ms-linear-gradient(#272B32,#354);background:-chrome-linear-gradient(#272B32,#354);background:linear-gradient(#272B32,#354);display:none;position:absolute; overflow:hidden;
 box-shadow:0 0 1px #111;

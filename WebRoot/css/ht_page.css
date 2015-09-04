@@ -64,11 +64,3 @@ body{ background:url(../images/bg.png) no-repeat center top fixed; padding-botto
 .admin_exit a:hover{color:#cb7470;}
 .admin_exit:hover{right:0px;}
 .admin_exit .info{float:left;height:40px;line-height:40px;padding-right:10px;}
-/* 分页开始 */
-.page .current{background:#00929d;padding:0 5px;border:solid 1px #00929d;}
-.page a{padding:0 5px;}
-.page a:hover{background:#45b3af;color:#fff;border:solid 1px #45b3af;}
-.page .tm_psize_go{height:26px;line-height:26px;padding:0 5px;}
-#tm_pagego {height: 24px;line-height: 24px;width: 24px;}
-.pagination .current.prev, .pagination .current.next{display:none;}
-/* 分页结束 */

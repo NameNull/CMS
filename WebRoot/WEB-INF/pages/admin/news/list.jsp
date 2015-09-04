@@ -45,29 +45,28 @@
           <jsp:include page="listTemplate.jsp"></jsp:include>
           </tbody>
           </table>
-          <div class="page" style="margin-top: 5px;float: right;"></div>
+          <div id="page" class="page" style="margin-top: 5px;float: right;"></div>
      </div>
 </div>
 <jsp:include page="/commons/admin/bottom.jsp"></jsp:include>
 <script>
 	$(function(){
 		var itemCount=$("#totalNum").text();
-		tm_initPage(itemCount,pn,ps);
+		tm_initPage(itemCount,0,12);
 	});
-	var pn=0,ps=12;
 	/* 删除  */
 	function tm_delete(obj){
 		//不管是什么删除一定要给提示，防止误操作
-		tm_dialog({content:"您确定删除吗?",callback:function(ok){
+		tm_dialog({content:"您确定删除吗?",width:300,callback:function(ok){
 			if(ok){
 				var id = $(obj).closest("tr").data("id");
 				var options={
 					url:basePath+"ajax/admin/news/delete/"+id,
 					callback:function(data){
 						if(data.result=="success"){
-							/* $(obj).closest("tr").fadeOut("slow",function(){
-								$(this).remove();
-							}); */
+							var pnum=$("#page").find(".tm_number").val();
+							var pn=pnum*1-1;
+							var ps=$("#page").find(".tm_psize_go").val();
 							tm_loadTemplate(pn, ps); 
 						}else{
 							alert("删除失败!");
@@ -91,8 +90,6 @@
 			showSelect:true,//控制是否现在下拉框 默认是true
 			callback : function(pageNum, pageSize) {//会回传两个参数一个当前页，显示的页数
 				//执行模板数据回调的方法
-				pn=pageNum;
-				ps=pageSize;
 				tm_loadTemplate(pageNum, pageSize); 
 			}
 		});

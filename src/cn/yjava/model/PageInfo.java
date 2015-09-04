@@ -13,7 +13,7 @@ import java.io.Serializable;
  */
 @SuppressWarnings("serial")
 public class PageInfo implements Serializable {
-	public static final String DEFAULT_PAGE_SIZE = "10";//默认每页多少条记
+	public static final String DEFAULT_PAGE_SIZE = "12";//默认每页多少条记
 	public static final String DEFAULT_LIST_OFFSET = "0";//默认从第几条记录
 	
     private String firstResult = "0"; //分页从第几条记录

@@ -12,9 +12,9 @@ function tm_dialog(options){
 	var opts = $.extend({},defaults,options);
 	//初始化拖拽
 
-	$("body").append("<div class='b_l w460 popanimate' id='dialogbox'>"+
+	$("body").append("<div class='b_l popanimate' id='dialogbox'>"+
 	"	<div class='bcom_ti'>"+
-	"		<a href='javascript:void(0);' class='bide layer_icon close fr'></a> <span>"+opts.title+"</span>"+
+	"		<a href='javascript:void(0);' class='bide layer_icon close fr iconfont'>&#xe603;</a> <span>"+opts.title+"</span>"+
 	"	</div>"+
 	"	<div class='bcom_cent'>"+
 	"		<p class='bcomti'>"+opts.content+"</p>"+
